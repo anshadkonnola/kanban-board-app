@@ -1,0 +1,70 @@
+.card{
+  width: 150px;
+  border-radius: 5px;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  gap: 1px
+}
+
+.card p{
+  margin: 0;
+}
+.card-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header .id {
+  width: 50%;
+  margin-left: -10px;
+  font-size: 7px;
+  justify-content: left;
+}
+
+.card-header .user .circle {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-left: -2px;
+  margin-top: 15px;
+  position: absolute;
+
+}
+
+.green{
+  background-color: green;
+}
+
+.gray{
+  background-color: gray;
+}
+
+
+.title {
+  font-size: 8px;
+}
+
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 3px;
+}
+
+.tags button{
+  height: 15px;
+  width: 35%;
+  background-color: white;
+  border: 0.1px solid gray;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.tag{
+  font-size: 6px;
+}
