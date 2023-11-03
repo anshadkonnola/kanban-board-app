@@ -1,5 +1,5 @@
 .card{
-  width: 150px;
+  width: 250px;
   border-radius: 5px;
   padding: 7px;
   display: flex;
@@ -20,16 +20,15 @@
 
 .card-header .id {
   width: 50%;
-  margin-left: -10px;
-  font-size: 7px;
-  justify-content: left;
+  margin-left: -10%;
+  font-size: 10px;
 }
 
 .card-header .user .circle {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  margin-left: -2px;
+  margin-left: -4px;
   margin-top: 15px;
   position: absolute;
 
@@ -45,7 +44,7 @@
 
 
 .title {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 
@@ -66,5 +65,5 @@
 }
 
 .tag{
-  font-size: 6px;
+  font-size: 8px;
 }
