@@ -25,6 +25,7 @@ function Header({ grouping, setGrouping, ordering, setOrdering}) {
             <span>Grouping</span>
             <select value={grouping} onChange={e => {
               setGrouping(e.target.value);
+              setDisplay(false);
             }}>
               <option value='status' name='status'>Status</option>
               <option value='user' name='user'>User</option>
@@ -35,6 +36,7 @@ function Header({ grouping, setGrouping, ordering, setOrdering}) {
             <span>Ordering</span>
             <select value={ordering} onChange={e => {
               setOrdering(e.target.value);
+              setDisplay(false);
             }}>
               <option value='priority'>Priority</option>
               <option value='title'>Title</option>

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleDot, faColonSign, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpWideShort, faCircleCheck, faCircleDot, faCircleExclamation, faCircleHalfStroke, faCircleNotch, faCircleXmark, faColonSign, faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
 const priorityLevels = {
   0: 'No priority',
@@ -14,16 +14,16 @@ const priorityIcons = {
   1: <FontAwesomeIcon icon={faCircleDot} />,
   2: <FontAwesomeIcon icon={faColonSign} />,
   3: <FontAwesomeIcon icon={faEllipsis} />,
-  4: <FontAwesomeIcon icon={faEllipsis} />
+  4: <FontAwesomeIcon icon={faCircleExclamation} />
 }
 
 const statusLevels = ['Backlog', 'Todo', 'In progress', 'Done', 'Cancelled']
 const statusIcons = {
-  'Backlog': <FontAwesomeIcon icon={faEllipsis} />,
-  'Todo': <FontAwesomeIcon icon={faEllipsis} />,
-  'In progress': <FontAwesomeIcon icon={faEllipsis} />,
-  'Done': <FontAwesomeIcon icon={faEllipsis} />,
-  'Cancelled': <FontAwesomeIcon icon={faEllipsis} />
+  'Backlog': <FontAwesomeIcon icon={faArrowUpWideShort} />,
+  'Todo': <FontAwesomeIcon icon={faCircleNotch} />,
+  'In progress': <FontAwesomeIcon icon={faCircleHalfStroke} />,
+  'Done': <FontAwesomeIcon icon={faCircleCheck} />,
+  'Cancelled': <FontAwesomeIcon icon={faCircleXmark} />
 
 }
 

@@ -31,6 +31,7 @@ function Body({ grouping, ordering, tickets, users }) {
               }
               items={tickets.filter(ticket => ticket.priority === level)}
               users={users}
+              grouping={grouping}
             />
           );
         })}
@@ -65,6 +66,7 @@ function Body({ grouping, ordering, tickets, users }) {
               }
               items={tickets.filter(ticket => ticket.userId === user.id)}
               users={users}
+              grouping={grouping}
             />
           );
         })}
@@ -93,6 +95,7 @@ function Body({ grouping, ordering, tickets, users }) {
               }
               items={tickets.filter(ticket => ticket.status === status)}
               users={users}
+              grouping={grouping}
             />
           );
         })}

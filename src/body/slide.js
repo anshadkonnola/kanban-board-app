@@ -9,6 +9,7 @@ const Slide = ({ title, items, users, grouping }) => {
           <Card 
             key={index}
             users={users}
+            grouping={grouping}
             id={item.id}
             title={item.title}
             tag={item.tag}
