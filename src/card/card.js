@@ -1,28 +1,32 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import './card.css';
+import { priorityIcons, statusIcons } from '../constants';
 
-function Card({users, id, title, tag, userId, status, priority}) {
-  const available = users.find(user => user.id === userId).available;
+function Card({users, grouping, id, title, tag, userId, status, priority}) {
+  const {available, color} = users.find(user => user.id === userId);
   return (
     <div className="card">
       <div className="card-header">
         <div className='id'>{id}</div>
-        <div className='user'>
-          <FontAwesomeIcon icon={faUserCircle}/>
+        {grouping !== 'user' && <div className='user'>
+          <FontAwesomeIcon
+            icon={faUserCircle}
+            color={color}
+          />
           <span className={`circle ${available ? 'green': 'gray'}`}></span>
-        </div>
+        </div>}
       </div>
-      <p className='title'>
-        <span className='status'>{status}</span>
-        {title}
+      <div className='card-body'>
+        {grouping !== 'status' && statusIcons[status]}
+        <p className='title'>
+          {title}
         </p>
+      </div>
       <div className='tags'>
-          <FontAwesomeIcon icon={faCircleExclamation}/>
-        {tag.map(t => <button>
-          <span className='circle gray'></span>
+          {grouping !== 'priority' && priorityIcons[priority]}
+        {tag.map((t, idx) => <button key={idx}>
           <div className='tag'>{t}</div>
         </button>)}
       </div>

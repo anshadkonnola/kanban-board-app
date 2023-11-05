@@ -1,6 +1,25 @@
 .App {
   text-align: center;
   font-family: 'Roboto';
+  background-color: #f2f2f2;
+}
+
+.circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-left: -4px;
+  margin-top: 13px;
+  position: absolute;
+
+}
+
+.green{
+  background-color: green;
+}
+
+.gray{
+  background-color: gray;
 }
 
 

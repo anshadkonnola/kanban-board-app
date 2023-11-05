@@ -1,16 +1,15 @@
 import React from 'react';
 import Card from '../card/card';
 
-const Slide = ({ title, items, users }) => {
+const Slide = ({ title, items, users, grouping }) => {
   return (
     <div className='slide'>
-      <div className='title'>
-        <span>{title}</span>
-      </div>
+        {title}
         {items.map((item, index) => (
           <Card 
             key={index}
             users={users}
+            grouping={grouping}
             id={item.id}
             title={item.title}
             tag={item.tag}

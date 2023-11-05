@@ -25,13 +25,19 @@
 }
 
 .card-header .user .circle {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   margin-left: -4px;
-  margin-top: 15px;
+  margin-top: 13px;
   position: absolute;
 
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .green{

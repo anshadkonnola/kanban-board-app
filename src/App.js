@@ -2,10 +2,11 @@ import './App.css';
 import Header from './header/Header';
 import Body from './body/Body';
 import { useEffect, useState } from 'react';
+import { profileColors } from './constants';
 
 function App() {
-  const [grouping, setGrouping] = useState('status'); // status, user, priority
-  const [ordering, setOrdering] = useState('Priority'); // Priority, Title
+  const [grouping, setGrouping] = useState(window.localStorage.getItem('grouping') || 'status'); // status, user, priority
+  const [ordering, setOrdering] = useState(window.localStorage.getItem('ordering') || 'priority'); // priority, title
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
 
@@ -14,16 +15,21 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setTickets(data.tickets);
-        setUsers(data.users);
+        setUsers(data.users.map((user, idx) => {
+          return {...user, color: profileColors[idx]};
+        }));
       });
   }, [])
 
-  useEffect(() => {
-    setGrouping(window.localStorage.getItem('grouping') || 'status');
-    setOrdering(window.localStorage.getItem('ordering') || 'priority');
-  }, [])
+  // useEffect(() => {
+  //   const grp = window.localStorage.getItem('grouping');
+  //   const ord = window.localStorage.getItem('ordering');
+  //   grp && setGrouping(grp);
+  //   ord && setOrdering(ord);
+  // }, [])
 
   useEffect(() => {
+    console.log(grouping);
     window.localStorage.setItem('grouping', grouping);
   }, [grouping])
 

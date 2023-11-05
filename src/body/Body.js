@@ -1,7 +1,9 @@
 import React from 'react';
 import './Body.css';
 import Slide from './slide';
-import { priorityLevels, statusLevels } from '../constants';
+import { priorityLevels, statusLevels, priorityIcons, statusIcons } from '../constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsis, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Body({ grouping, ordering, tickets, users }) {
   if(ordering === 'priority') tickets.sort((a, b) => a.priority - b.priority);
@@ -14,7 +16,19 @@ function Body({ grouping, ordering, tickets, users }) {
           return (
             <Slide 
               key={idx}
-              title={priorityLevels[level]}
+              title={
+                <div className='title-container'>
+                  {priorityIcons[level]}
+                  <div className='title-content'>
+                    {priorityLevels[level]}&nbsp;&nbsp;&nbsp;&nbsp;
+                    {tickets.filter(ticket => ticket.priority === level).length}
+                  </div>
+                  <div className='title-icons'>
+                    <FontAwesomeIcon icon={faPlus} />
+                    <FontAwesomeIcon icon={faEllipsis} />
+                  </div>
+                </div>
+              }
               items={tickets.filter(ticket => ticket.priority === level)}
               users={users}
             />
@@ -30,9 +44,28 @@ function Body({ grouping, ordering, tickets, users }) {
           return (
             <Slide 
               key={idx}
-              title={user.name}
+              title={
+                <div className='title-container'>
+                  <div className='user'>
+                    <FontAwesomeIcon
+                      icon={faUserCircle}
+                      color={user.color}
+                    />
+                    <span className={`circle ${user.available ? 'green': 'gray'}`}></span>
+                  </div>
+                  <div className='title-content'>
+                    {user.name}&nbsp;&nbsp;&nbsp;&nbsp;
+                    {tickets.filter(ticket => ticket.userId === user.id).length}
+                  </div>
+                  <div className='title-icons'>
+                    <FontAwesomeIcon icon={faPlus} />
+                    <FontAwesomeIcon icon={faEllipsis} />
+                  </div>
+                </div>
+              }
               items={tickets.filter(ticket => ticket.userId === user.id)}
               users={users}
+              grouping={grouping}
             />
           );
         })}
@@ -46,7 +79,19 @@ function Body({ grouping, ordering, tickets, users }) {
           return (
             <Slide 
               key={idx}
-              title={status}
+              title={
+                <div className='title-container'>
+                  {statusIcons[status]}
+                  <div className='title-content'>
+                    {status}&nbsp;&nbsp;&nbsp;&nbsp;
+                    {tickets.filter(ticket => ticket.status === status).length}
+                  </div>
+                  <div className='title-icons'>
+                    <FontAwesomeIcon icon={faPlus} />
+                    <FontAwesomeIcon icon={faEllipsis} />
+                  </div>
+                </div>
+              }
               items={tickets.filter(ticket => ticket.status === status)}
               users={users}
             />
