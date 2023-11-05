@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Body({ grouping, ordering, tickets, users }) {
-  if(ordering === 'priority') tickets.sort((a, b) => a.priority - b.priority);
+  if(ordering === 'priority') tickets.sort((a, b) => b.priority - a.priority);
   else tickets.sort((a, b) => a.title.localeCompare(b.title));
 
   if(grouping === 'priority') {
