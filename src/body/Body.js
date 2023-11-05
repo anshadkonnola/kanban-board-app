@@ -65,14 +65,13 @@ function Body({ grouping, ordering, tickets, users }) {
               }
               items={tickets.filter(ticket => ticket.userId === user.id)}
               users={users}
-              grouping={grouping}
             />
           );
         })}
       </div>
     );
   }
-  else { // grouping === 'status'
+  else if(grouping === 'status'){
     return (
       <div className='body'>
         {statusLevels.map((status, idx) => {
@@ -100,6 +99,7 @@ function Body({ grouping, ordering, tickets, users }) {
       </div>
     );
   }
+  else return null;
 }
 
 export default Body;

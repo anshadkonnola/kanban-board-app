@@ -21,13 +21,6 @@ function App() {
       });
   }, [])
 
-  // useEffect(() => {
-  //   const grp = window.localStorage.getItem('grouping');
-  //   const ord = window.localStorage.getItem('ordering');
-  //   grp && setGrouping(grp);
-  //   ord && setOrdering(ord);
-  // }, [])
-
   useEffect(() => {
     window.localStorage.setItem('grouping', grouping);
   }, [grouping])

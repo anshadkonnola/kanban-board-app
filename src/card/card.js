@@ -4,8 +4,9 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import './card.css';
 import { priorityIcons, statusIcons } from '../constants';
 
-function Card({users, grouping, id, title, tag, userId, status, priority}) {
+function Card({users, id, title, tag, userId, status, priority}) {
   const {available, color} = users.find(user => user.id === userId);
+  const grouping = window.localStorage.getItem('grouping');
   return (
     <div className="card">
       <div className="card-header">

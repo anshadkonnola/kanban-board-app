@@ -17,11 +17,11 @@ const priorityIcons = {
   4: <FontAwesomeIcon icon={faEllipsis} />
 }
 
-const statusLevels = ['Backlog', 'Todo', 'In Progress', 'Done', 'Cancelled']
+const statusLevels = ['Backlog', 'Todo', 'In progress', 'Done', 'Cancelled']
 const statusIcons = {
   'Backlog': <FontAwesomeIcon icon={faEllipsis} />,
   'Todo': <FontAwesomeIcon icon={faEllipsis} />,
-  'In Progress': <FontAwesomeIcon icon={faEllipsis} />,
+  'In progress': <FontAwesomeIcon icon={faEllipsis} />,
   'Done': <FontAwesomeIcon icon={faEllipsis} />,
   'Cancelled': <FontAwesomeIcon icon={faEllipsis} />
 
