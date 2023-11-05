@@ -29,7 +29,6 @@ function App() {
   // }, [])
 
   useEffect(() => {
-    console.log(grouping);
     window.localStorage.setItem('grouping', grouping);
   }, [grouping])
 
