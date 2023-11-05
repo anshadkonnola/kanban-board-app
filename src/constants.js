@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpWideShort, faCircleCheck, faCircleDot, faCircleExclamation, faCircleHalfStroke, faCircleNotch, faCircleXmark, faColonSign, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpWideShort, faCircleCheck, faCircleDot, faCircleExclamation, faCircleHalfStroke, faCircleNotch, faCircleXmark, faColonSign, faEllipsis, faSignal, faVolumeHigh, faVolumeLow, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 const priorityLevels = {
   0: 'No priority',
@@ -11,9 +11,9 @@ const priorityLevels = {
 
 const priorityIcons = {
   0: <FontAwesomeIcon icon={faEllipsis} />,
-  1: <FontAwesomeIcon icon={faCircleDot} />,
-  2: <FontAwesomeIcon icon={faColonSign} />,
-  3: <FontAwesomeIcon icon={faEllipsis} />,
+  1: <FontAwesomeIcon icon={faVolumeLow} />,
+  2: <FontAwesomeIcon icon={faVolumeUp} />,
+  3: <FontAwesomeIcon icon={faSignal} />,
   4: <FontAwesomeIcon icon={faCircleExclamation} />
 }
 
